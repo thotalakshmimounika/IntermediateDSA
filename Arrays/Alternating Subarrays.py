@@ -13,6 +13,26 @@ for i in range(n):
         if c==s:
             k.append(int((i+j)/2))
 print(k)
+Or 
+
+a=[ 0, 0, 1, 1, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 1, 1, 1, 1 ]
+b=0
+n = len(a)
+s=2*b+1
+ans = []
+c=0
+p=a[0]
+for i in range(n):
+        if p==a[i]:
+                c=1
+                continue
+        else:
+                p=1-p
+                c+=1
+                if c%s==0:
+                        ans.append(i-b)
+                        c-=1
+print(ans)
 
 
 
