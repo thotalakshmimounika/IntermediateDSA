@@ -1,21 +1,14 @@
-a=[1,2,2,3]
+nums=[11,11,9,4,3,3,3,1,-1,-1,3,3,3,5,5,5]
+increase = True
+decrease = True
 
-n=len(a)
-p=a[0]
-k=0
-d=0
-if p<=a[1]:
-    for i in range(1,n):
-        if a[i]>=p:
-            p=a[i]
-            k+=1
-            if k==n-1:
-                Print('True')
-else:
-    for i in range(1,n):
-        if a[i]<=p:
-            p=a[i]
-            d+=1
-            if d==n-1:
-                Print('True')
-Print('False')
+for idx in range(1, len(nums)):
+    current = nums[idx]
+    previous = nums[idx - 1]
+    
+    if previous > current:
+        increase = False
+    elif previous < current:
+        decrease = False
+        
+print(increase or decrease)
