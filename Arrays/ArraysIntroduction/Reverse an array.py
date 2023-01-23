@@ -6,3 +6,6 @@ n=len(a)
 for i in range(len(a)):
     s.append(a[n-i-1])
 print(s)
+
+# if to return new array Space Complexity = O(n)
+#Time complexity - O(n)
