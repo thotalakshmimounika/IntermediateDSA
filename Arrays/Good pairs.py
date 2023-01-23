@@ -61,12 +61,17 @@
 
 #  (i,j) = (2,3)
 
-a=[1,4,2,3]
-b=7
-for i in range(len(a)):
-    for j in range(i+1,len(a)):
-        if a[i]+a[j]==b:
-            print(1)
-         else:
-            print(0)
+class Solution:
+    # @param A : list of integers
+    # @param B : integer
+    # @return an integer
+    def solve(self, a,b):
+        for i in range(len(a)):
+            for j in range(i+1,len(a)):
+                if a[i]+a[j]==b and i!=j:
+                    return 1
+        return 0
+    
+ # Time Complexity - O(N^2)
+# Space Complexity - O(1)
 
