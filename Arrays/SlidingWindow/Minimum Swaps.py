@@ -83,3 +83,10 @@ while(end<n):
     start+=1
     end+=1
 print(swap)
+
+#Time Complexity - O(N)
+#Space Complexity - O(1)
+
+
+
+
