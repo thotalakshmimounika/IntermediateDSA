@@ -51,4 +51,4 @@ class Solution:
 
 # by making the remaining people exactly pow of 2 after some skills, the next person , who is holding the sword will win.
 #here we are checking the closest pow of 2 to given number and calsulating how many skill required.
-#for kill x people we need x other person . So in total 2x people will involve in this kill and next person who holds the sword will survive.
+#for killing 'x' people we need 'x' other person . So in total '2x' people will involve in this kill and next person who holds the sword will survive.
