@@ -1,25 +1,24 @@
-class Solution:
-    import sys
-    def maxp3(self,a):
-        n=len(a)
-        ma=-sys.maxsize-1
-        mb=-sys.maxsize-1
-        mc=-sys.maxsize-1
-        mina=sys.maxsize
-        minb=sys.maxsize
-        for i in range(n):
-            if a[i]>ma:
-                mc=mb
-                mb=ma
-                ma=a[i]
-            elif a[i]>mb:
-                mc=mb
-                mb=a[i]
-            elif a[i]>mc:
-                mc=a[i]
-            if a[i]<mina:
-                minb=mina
-                mina=a[i]
-        return max(mina*minb*mina,ma*mb*mc)
+a=[1,2,3,4]
+n=len(a)
+p=[1]*n
+p[0]=a[0]
+s=[1]*n
+s[n-1]=a[n-1]
+b=[]
+m=10**9+7
+for i in range(1,n):
+    p[i]=(p[i-1]*a[i])%m
+for i in range(n-2,-1,-1):
+    s[i]=(s[i+1]*a[i])%m
+
+for i in range(n):
+    if i==0:
+        b.append(s[i+1])
+    elif i==n-1:
+        b.append(p[i-1])
+    else:
+        b.append((p[i-1]*s[i+1])%m)
+print(b)
+    
 	        
 	        
