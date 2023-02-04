@@ -1,11 +1,9 @@
 # You are given two integers A and B.
-# If B-th bit in A is set, make it unset
-# If B-th bit in A is unset, leave it as it is
-# Return the updated A value
+# Set the A-th bit and B-th bit in 0, and return output in decimal.
 
 
 # Problem Constraints
-# 1 <= A <= 109
+# 0 <= A <= 30
 # 0 <= B <= 30
 
 
@@ -20,29 +18,31 @@
 
 # Example Input
 # Input 1:
-# A = 4
-# B = 1
+# A = 3
+# B = 5
 # Input 2:
-# A = 5
-# B = 2
+# A = 4
+# B = 4
 
 
 # Example Output
 # Output 1:
-# 4
+# 40
 # Output 2:
-# 1
+# 16
 
 
 # Example Explanation
 # For Input 1:
-# Given N = 4 which is 100 in binary. The 1-st bit is already unset
+# The binary expression is 101000 which is 40 in decimal.
 # For Input 2:
- 
-# Given N = 5 which is 101 in binary. We unset the 2-nd bit
+# The binary expression is 10000 which is 16 in decimal
 class Solution:
     # @param A : integer
     # @param B : integer
     # @return an integer
     def solve(self, a,b):
-        return (a|(1<<b))^(1<<b)
+        if a==b:
+            return 2**a
+        else:
+            return 2**a+2**b

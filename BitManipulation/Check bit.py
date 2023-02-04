@@ -1,7 +1,6 @@
 # You are given two integers A and B.
-# If B-th bit in A is set, make it unset
-# If B-th bit in A is unset, leave it as it is
-# Return the updated A value
+# Return 1 if B-th bit in A is set
+# Return 0 if B-th bit in A is unset
 
 
 # Problem Constraints
@@ -29,20 +28,22 @@
 
 # Example Output
 # Output 1:
-# 4
+# 0
 # Output 2:
 # 1
 
 
 # Example Explanation
 # For Input 1:
-# Given N = 4 which is 100 in binary. The 1-st bit is already unset
+# Given N = 4 which is 100 in binary. The 1-st bit is unset
+# so we return 0
 # For Input 2:
  
-# Given N = 5 which is 101 in binary. We unset the 2-nd bit
+# Given N = 5 which is 101 in binary. The 2-nd bit is set
+# so we return 1
 class Solution:
     # @param A : integer
     # @param B : integer
     # @return an integer
     def solve(self, a,b):
-        return (a|(1<<b))^(1<<b)
+        return a>>b&1
