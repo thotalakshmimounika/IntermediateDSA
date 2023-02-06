@@ -1,7 +1,5 @@
 # Given an array, arr[] of size N, the task is to find the count of array indices such that removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal.
 
-
-
 # Problem Constraints
 # 1 <= n <= 105
 # -105 <= A[i] <= 105
@@ -10,11 +8,8 @@
 # Input Format
 # First argument contains an array A of integers of size N
 
-
 # Output Format
 # Return the count of array indices such that removing an element from these indices makes the sum of even-indexed and odd-indexed array elements equal.
-
-
 
 # Example Input
 # Input 1:
