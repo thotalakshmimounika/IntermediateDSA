@@ -1,8 +1,4 @@
-class Solution:
-    # @param A : list of integers
-    # @return a list of integers
 
-    def solve(self, a):
         def countfactors(a):
             c=0
             for i in range(1,int(a**(0.5))+1):
@@ -15,9 +11,3 @@ class Solution:
         a.sort()
         a.sort(key=countfactors)
         return a
-                
-
-
-
-
-
