@@ -47,9 +47,14 @@ def fac(a):
     if a==1 or a==0:
         return 1
     else:
-        return fac(a-1)*a
+        k=fac(a-1)
+        print(k)
+        return k*a
 class Solution:
     # @param A : integer
     # @return an integer
     def solve(self, a):
         return fac(a)
+
+obj=Solution()
+print(obj.solve(5))
