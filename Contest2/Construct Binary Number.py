@@ -1,3 +1,4 @@
+#Construct a binary number a 1's followed by b 0's. Return the decimal value of that number
 a=5
 b=4
 c=a+b

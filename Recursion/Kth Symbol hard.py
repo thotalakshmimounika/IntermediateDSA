@@ -5,9 +5,9 @@
 
 
 # Problem Constraints
-# 1 <= A <= 20
+# 1 <= A <= 105
 
-# 0 <= B < 2A - 1
+# 0 <= B <= min(2A - 1 - 1 , 1018)
 
 
 
@@ -56,17 +56,20 @@
 #  Row 3: 0110
 #  Row 4: 01101001
 
-def sym(a,b):
-    if b==0 or b==1:
-        return b
-    i=(1<<(a-1))
-    if b<i/2:
-        return sym(a-1,b)
-    else:
-        return 1-sym(a-1,b-(i/2))
+def ans(A,B):
+    if B==0 or B==1:
+        return B
+
+    x=ans(A-1,B//2)    # this will go to value and coordinate of parent elemnt
+
+    if B%2==0:         # if the kid is at left index or even index, it will be same as parent elemnt
+        return x
+    else:              # otherwise if kid is at right or odd index, it will complimentray value
+        return 1-x
+
 class Solution:
     # @param A : integer
-    # @param B : integer
+    # @param B : long
     # @return an integer
-    def solve(self, a,b):
-        return int(sym(a,b))
+    def solve(self, A, B):
+        return ans(A,B)    
