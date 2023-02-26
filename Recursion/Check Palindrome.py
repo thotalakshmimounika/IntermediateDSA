@@ -48,7 +48,7 @@
 
 #  "strings" is not a palindrome, so return 0.
 import sys
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10**6) # this will stack storage limit for the recursion function
 def Rec(A, start, end):
     if start >= end:
         return 1
