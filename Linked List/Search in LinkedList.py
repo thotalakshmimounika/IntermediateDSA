@@ -1,13 +1,13 @@
-# You are given the head of a linked list A and an integer B. Delete the B-th node from the linked list.
+# You are given the head of a linked list A and an integer B, check if there is any node which contains this value B.
 
-# Note : Follow 0-based indexing for the node numbering.
+# Return 1 if such a node is present else return 0.
 
 
 
 # Problem Constraints
 # 1 <= size of linked list <= 105
 # 1 <= value of nodes <= 109
-# 0 <= B < size of linked list
+# 1 <= B <= 109
 
 
 
@@ -19,32 +19,30 @@
 
 
 # Output Format
-# Return the head of the linked list after deletion
-
+# Return 1 if such a node is present otherwise return 0.
 
 
 # Example Input
 # Input 1:
 # A = 1 -> 2 -> 3
-# B = 1
+# B = 4
 # Input 2:
 # A = 4 -> 3 -> 2 -> 1
-# B = 0
+# B = 4
 
 
 # Example Output
 # Output 1:
-# 1 -> 3
+# 0
 # Output 2:
-# 3 -> 2 -> 1
+# 1
 
 
 # Example Explanation
 # For Input 1:
-# The linked list after deletion is 1 -> 3.
+# None of the nodes have a value 4.
 # For Input 2:
-# The linked list after deletion is 3 -> 2 -> 1.
-
+# The first node has a value 4.
 # Definition for singly-linked list.
 # class ListNode:
 #    def __init__(self, x):
@@ -54,18 +52,11 @@
 class Solution:
     # @param A : head node of linked list
     # @param B : integer
-    # @return the head node in the linked list
-    
+    # @return an integer
     def solve(self, a,b):
         temp=a
-        if b==0:
+        while(temp!=None):
+            if temp.val==b:
+                return 1
             temp=temp.next
-            return temp
-        cn=a
-        i=0
-        while(i<b):
-            if i==b-1:
-                cn.next=cn.next.next
-            cn=cn.next
-            i+=1
-        return temp
+        return 0
