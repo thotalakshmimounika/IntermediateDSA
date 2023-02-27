@@ -1,13 +1,17 @@
 a='scaler'
 b=[[0,2],[2,4]]
-n = len(a)
-vowels = set(['a', 'e', 'i', 'o', 'u'])
-prefix_counts = [0] * (n+1)
-for i in range(1, n+1):
-    prefix_counts[i] = prefix_counts[i-1] + (a[i-1] in vowels)
-counts = []
-for query in b:
-    start, end = query
-    count = prefix_counts[end+1] - prefix_counts[start]
-    counts.append(count)
-print(counts)
+# @param A : string
+# @param B : list of list of integers
+# @return a list of integers
+def solve(self, a,b):
+    n=len(a)
+    ans='aeiou'
+    p=[0]*(n+1)
+    for i in range(1,n+1):
+        p[i]=p[i-1]+(a[i-1] in ans)
+    k=[]
+    for i in range(len(b)):
+        l,r=b[i]
+        c=p[r+1]-p[l]
+        k.append(c)
+    return k

@@ -1,6 +1,10 @@
-s = ['I', 'want', 4, 'apples', 'and', 18, 'bananas']
-listToStr = ' '.join(map(str, s))
+s = ['the','quick','brown','fox','jumps','over','the','lazy','dog']
+listToStr = ''.join(map(str, s))
+print(listToStr)
 s=set(listToStr)
-for i in range(26):
-    if chr(97+i) not in s:
-        print(0)
+d=set()
+for i in listToStr:
+    d.add(i)
+if len(d)==26:
+    print(1)
+
