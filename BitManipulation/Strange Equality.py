@@ -1,12 +1,11 @@
-a=5
-for i in range(a-1,-1,-1):
-    if i+a == a^i:
-        a1=i
-        break
-i=a+1
-while(i>a):
-    if i+a == a^i:
-        a2=i
-        break
-    i+=1
-print(a1^a2)
+a=1
+x=0
+k=a
+for i in range(31):
+    if a&(1<<i):
+        k=k-2**i
+    else:
+        x=x^(1<<i)
+    if k==0:
+        print(x^2**(i+1))
+

@@ -8,4 +8,4 @@ for i in range(len(a)):
     else:
         s+=int(k)
         k="0"
-print(s+int(k))
+print(s)
