@@ -49,12 +49,17 @@ class Solution:
                         c+=1
                     else:
                         c+=2
+            print(a,c)
             return c
         a.sort()
+        print(a)
         a.sort(key=countfactors)
+        print(a)
         return a
                 
 
+obj=Solution()
+print(obj.solve([8,6,9]))
 
 
 
